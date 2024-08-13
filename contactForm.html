@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Contact Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 4rem auto;
+            max-width: 800px;
+            padding: 1rem;
+            border: 4px solid red;
+            box-shadow: 0px 0px 10px 10px lightblue;
+        }
+
+        #contactform-container {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            border: 2px solid black;
+            box-shadow: 0px 0px 8px 8px rgb(206, 233, 206);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        label {
+            margin-top: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background-color: blue;
+            color: white;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+
+        .btn:hover {
+            background-color: darkblue;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 2rem;
+                padding: 1rem;
+            }
+
+            #contactform-container {
+                padding: 1rem;
+            }
+
+            .btn {
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 1rem;
+                padding: 0.5rem;
+            }
+
+            h1 {
+                margin: 1rem 0;
+            }
+
+            .btn {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Form</h1>
+        <form action="mailto:aryan123naruto@gmail.com" id="contactform-container">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <label for="textarea">Query</label>
+            <textarea id="textarea" cols="30" rows="10" placeholder="Enter Your Query"></textarea>
+            <button id="btn1" class="btn" onclick="call()" type="button">Call Us</button>
+            <button id="btn2" class="btn" type="submit">Email Us</button>
+            <button id="btn3" class="btn" onclick="chat()" type="button">Chat with us</button>
+            <button id="btn4" class="btn" onclick="telegram()" type="button">telegram</button>
+        </form>
+    </div>
+
+    <script>
+
+        function call() {
+            window.location.href = 'tel:9817028770';
+        }
+        function chat() {
+            const name = document.getElementById('name').value;
+            const query = document.getElementById('textarea').value;
+            const message = `Name: ${name}\nQuery: ${query}`;
+            const whatsappUrl = `https://wa.me/919817028770?text=${message}`;
+            window.location.href = whatsappUrl;
+        }
+
+        function telegram()
+        {
+            const telegramUrl = 'https://t.me/+919928859277';
+            
+
+
+
+            window.location.href = telegramUrl;
+        }
+    </script>
+</body>
+</html>
